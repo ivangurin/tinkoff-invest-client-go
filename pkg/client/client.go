@@ -29,7 +29,7 @@ func (a auth) RequireTransportSecurity() bool {
 	return true
 }
 
-type client struct {
+type Client struct {
 	UsersService       investapi.UsersServiceClient
 	InstrumentsService investapi.InstrumentsServiceClient
 	MarketDataService  investapi.MarketDataServiceClient
@@ -38,15 +38,15 @@ type client struct {
 	StopOrdersService  investapi.StopOrdersServiceClient
 }
 
-func NewClient(token string) (*client, error) {
+func NewClient(token string) (*Client, error) {
 	return new(prodHost, token)
 }
 
-func NewSandboxClient(token string) (*client, error) {
+func NewSandboxClient(token string) (*Client, error) {
 	return new(sandboxHost, token)
 }
 
-func new(target string, token string) (*client, error) {
+func new(target string, token string) (*Client, error) {
 
 	opts := []grpc.DialOption{
 		grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{
@@ -62,7 +62,7 @@ func new(target string, token string) (*client, error) {
 		return nil, err
 	}
 
-	client := &client{
+	client := &Client{
 		UsersService:       investapi.NewUsersServiceClient(conn),
 		InstrumentsService: investapi.NewInstrumentsServiceClient(conn),
 		MarketDataService:  investapi.NewMarketDataServiceClient(conn),
