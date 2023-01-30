@@ -36,6 +36,7 @@ type Client struct {
 	OperationsService  investapi.OperationsServiceClient
 	OrdersService      investapi.OrdersServiceClient
 	StopOrdersService  investapi.StopOrdersServiceClient
+	SandboxService     investapi.SandboxServiceClient
 }
 
 func NewClient(token string) (*Client, error) {
@@ -69,6 +70,7 @@ func new(target string, token string) (*Client, error) {
 		OperationsService:  investapi.NewOperationsServiceClient(conn),
 		OrdersService:      investapi.NewOrdersServiceClient(conn),
 		StopOrdersService:  investapi.NewStopOrdersServiceClient(conn),
+		SandboxService:     investapi.NewSandboxServiceClient(conn),
 	}
 
 	return client, nil
