@@ -1,2 +1,2 @@
 protogen: 	
-	protoc -I ./api/proto --go_out=./internal/investapi --go-grpc_out=./internal/investapi ./api/proto/*.proto
+	protoc -I ./api/proto --go_out=./pkg/investapi --go-grpc_out=./pkg/investapi ./api/proto/*.proto
