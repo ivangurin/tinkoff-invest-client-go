@@ -244,19 +244,19 @@ type CandleInterval int32
 
 const (
 	CandleInterval_CANDLE_INTERVAL_UNSPECIFIED CandleInterval = 0  //Интервал не определён.
-	CandleInterval_CANDLE_INTERVAL_1_MIN       CandleInterval = 1  //1 минута.
-	CandleInterval_CANDLE_INTERVAL_5_MIN       CandleInterval = 2  //5 минут.
-	CandleInterval_CANDLE_INTERVAL_15_MIN      CandleInterval = 3  //15 минут.
-	CandleInterval_CANDLE_INTERVAL_HOUR        CandleInterval = 4  //1 час.
-	CandleInterval_CANDLE_INTERVAL_DAY         CandleInterval = 5  //1 день.
-	CandleInterval_CANDLE_INTERVAL_2_MIN       CandleInterval = 6  //2 минуты.
-	CandleInterval_CANDLE_INTERVAL_3_MIN       CandleInterval = 7  //3 минуты.
-	CandleInterval_CANDLE_INTERVAL_10_MIN      CandleInterval = 8  //10 минут.
-	CandleInterval_CANDLE_INTERVAL_30_MIN      CandleInterval = 9  //30 минут.
-	CandleInterval_CANDLE_INTERVAL_2_HOUR      CandleInterval = 10 //2 часа.
-	CandleInterval_CANDLE_INTERVAL_4_HOUR      CandleInterval = 11 //4 часа.
-	CandleInterval_CANDLE_INTERVAL_WEEK        CandleInterval = 12 //1 неделя.
-	CandleInterval_CANDLE_INTERVAL_MONTH       CandleInterval = 13 //1 месяц.
+	CandleInterval_CANDLE_INTERVAL_1_MIN       CandleInterval = 1  //от 1 минуты до 1 дня.
+	CandleInterval_CANDLE_INTERVAL_5_MIN       CandleInterval = 2  //от 5 минут до 1 дня.
+	CandleInterval_CANDLE_INTERVAL_15_MIN      CandleInterval = 3  //от 15 минут до 1 дня.
+	CandleInterval_CANDLE_INTERVAL_HOUR        CandleInterval = 4  //от 1 часа до 1 недели.
+	CandleInterval_CANDLE_INTERVAL_DAY         CandleInterval = 5  //от 1 дня до 1 года.
+	CandleInterval_CANDLE_INTERVAL_2_MIN       CandleInterval = 6  //от 2 минут до 1 дня.
+	CandleInterval_CANDLE_INTERVAL_3_MIN       CandleInterval = 7  //от 3 минут до 1 дня.
+	CandleInterval_CANDLE_INTERVAL_10_MIN      CandleInterval = 8  //от 10 минут до 1 дня.
+	CandleInterval_CANDLE_INTERVAL_30_MIN      CandleInterval = 9  //от 30 минут до 2 дней.
+	CandleInterval_CANDLE_INTERVAL_2_HOUR      CandleInterval = 10 //от 2 часов до 1 месяца.
+	CandleInterval_CANDLE_INTERVAL_4_HOUR      CandleInterval = 11 //от 4 часов до 1 месяца.
+	CandleInterval_CANDLE_INTERVAL_WEEK        CandleInterval = 12 //от 1 недели до 2 лет.
+	CandleInterval_CANDLE_INTERVAL_MONTH       CandleInterval = 13 //от 1 месяца до 10 лет.
 )
 
 // Enum value maps for CandleInterval.

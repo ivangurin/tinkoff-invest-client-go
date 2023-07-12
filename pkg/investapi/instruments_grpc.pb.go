@@ -63,7 +63,7 @@ type InstrumentsServiceClient interface {
 	GetDividends(ctx context.Context, in *GetDividendsRequest, opts ...grpc.CallOption) (*GetDividendsResponse, error)
 	// Метод получения актива по его идентификатору.
 	GetAssetBy(ctx context.Context, in *AssetRequest, opts ...grpc.CallOption) (*AssetResponse, error)
-	// Метод получения списка активов.
+	// Метод получения списка активов. Метод работает для всех инструментов, за исключением срочных - опционов и фьючерсов.
 	GetAssets(ctx context.Context, in *AssetsRequest, opts ...grpc.CallOption) (*AssetsResponse, error)
 	// Метод получения списка избранных инструментов.
 	GetFavorites(ctx context.Context, in *GetFavoritesRequest, opts ...grpc.CallOption) (*GetFavoritesResponse, error)
@@ -376,7 +376,7 @@ type InstrumentsServiceServer interface {
 	GetDividends(context.Context, *GetDividendsRequest) (*GetDividendsResponse, error)
 	// Метод получения актива по его идентификатору.
 	GetAssetBy(context.Context, *AssetRequest) (*AssetResponse, error)
-	// Метод получения списка активов.
+	// Метод получения списка активов. Метод работает для всех инструментов, за исключением срочных - опционов и фьючерсов.
 	GetAssets(context.Context, *AssetsRequest) (*AssetsResponse, error)
 	// Метод получения списка избранных инструментов.
 	GetFavorites(context.Context, *GetFavoritesRequest) (*GetFavoritesResponse, error)

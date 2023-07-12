@@ -544,7 +544,7 @@ type PostOrderRequest struct {
 	Direction    OrderDirection `protobuf:"varint,4,opt,name=direction,proto3,enum=tinkoff.public.invest.api.contract.v1.OrderDirection" json:"direction,omitempty"`             //Направление операции.
 	AccountId    string         `protobuf:"bytes,5,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`                                                       //Номер счёта.
 	OrderType    OrderType      `protobuf:"varint,6,opt,name=order_type,json=orderType,proto3,enum=tinkoff.public.invest.api.contract.v1.OrderType" json:"order_type,omitempty"` //Тип заявки.
-	OrderId      string         `protobuf:"bytes,7,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`                                                             //Идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов.
+	OrderId      string         `protobuf:"bytes,7,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`                                                             //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
 	InstrumentId string         `protobuf:"bytes,8,opt,name=instrument_id,json=instrumentId,proto3" json:"instrument_id,omitempty"`                                              //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
 }
 
@@ -1094,7 +1094,7 @@ type OrderState struct {
 	OrderType             OrderType                  `protobuf:"varint,17,opt,name=order_type,json=orderType,proto3,enum=tinkoff.public.invest.api.contract.v1.OrderType" json:"order_type,omitempty"`                                                       //Тип заявки.
 	OrderDate             *timestamppb.Timestamp     `protobuf:"bytes,18,opt,name=order_date,json=orderDate,proto3" json:"order_date,omitempty"`                                                                                                             //Дата и время выставления заявки в часовом поясе UTC.
 	InstrumentUid         string                     `protobuf:"bytes,19,opt,name=instrument_uid,json=instrumentUid,proto3" json:"instrument_uid,omitempty"`                                                                                                 //UID идентификатор инструмента.
-	OrderRequestId        string                     `protobuf:"bytes,20,opt,name=order_request_id,json=orderRequestId,proto3" json:"order_request_id,omitempty"`                                                                                            //Идентификатор ключа идемпотентности, переданный клиентом.
+	OrderRequestId        string                     `protobuf:"bytes,20,opt,name=order_request_id,json=orderRequestId,proto3" json:"order_request_id,omitempty"`                                                                                            //Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.
 }
 
 func (x *OrderState) Reset() {
